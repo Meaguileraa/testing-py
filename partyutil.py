@@ -19,6 +19,15 @@ def is_mel(name, email):
     >>> is_mel('hi', 'hi')
     False
     """
+    #doesn't use last name
+    #doesn't capitalize it
+    #doesn't write email in uppercase
+
+    # mel_info = ['Mel Melitpolski', 'mel@ubermelon.com']
+
+    # if name in mel_info
+    #splitting 
+
 
     return name == 'Mel Melitpolski' or email == 'mel@ubermelon.com'
 
