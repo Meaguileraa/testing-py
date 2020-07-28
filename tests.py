@@ -46,8 +46,15 @@ class PartyTests(unittest.TestCase):
         """Can we keep Mel out?"""
 
         # FIXME: write a test that mel can't invite himself
-        pass
-        print('FIXME')
+        rsvp_info = {'name': 'Mel Melitpolski', 'email': 'mel@ubermelon.com'}
+
+        result = self.client.post('/rsvp', data=rsvp_info,
+                                  follow_redirects=True)
+
+        #self.assertIn(b'Sorry, Mel.', result.data)
+        self.assertNotIn(b'Yay!')
+        self.assertNotIn(b'Party Details', result.data)
+        self.assertIn(b'Please RSVP', result.data)
 
 
 if __name__ == '__main__':
